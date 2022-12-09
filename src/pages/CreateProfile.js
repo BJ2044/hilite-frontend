@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 export default function CreateProfile() {
-  const [form, setForm] = useState()
+  const [form, setForm] = useState({})
   //useState to store id
 
   const submitProfile = e => {
@@ -16,14 +16,11 @@ export default function CreateProfile() {
     })
     //.then for json
     //.then to get res.id
-
   }
 
   const handleForm = e => {
     setForm({...form, [e.target.name]: e.target.value })
   }
-
-  console.log(form)
 
   return (
 
@@ -52,7 +49,8 @@ export default function CreateProfile() {
         <label htmlFor=''>State</label>
         <input name='state' type='text' onChange={handleForm} />
         <br />
-        <button type='submit'>
+        <button onClick={() => submitProfile} >
+        {console.log(submitProfile , "checking for profiles")}
           Submit Profile
         </button>
       </form>

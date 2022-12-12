@@ -1,8 +1,22 @@
 import { useState } from 'react'
+import { Box, Button, Form, Grommet } from "grommet";
+
+const theme = {
+  global: {
+    colors: {
+      brand: "#9c89ff"
+    },
+    font: {
+      family: "Roboto",
+      size: "18px",
+      height: "20px"
+    },
+  },
+};
+
 
 export default function CreateProfile() {
   const [form, setForm] = useState({})
-  //useState to store id
 
   const submitProfile = e => {
     e.preventDefault()
@@ -25,9 +39,12 @@ export default function CreateProfile() {
   return (
 
     //display id when it exist
+    <body>
+    <Grommet theme={theme}>
     <div className='container'>
       <h1>Create Profile</h1>
-      <form onSubmit={submitProfile}>
+      <Box margin="10px 0px 10px 0px">
+      <Form onSubmit={submitProfile}>
         <label htmlFor=''>Name</label>
         <input name='name' type='text' onChange={handleForm} />
         <br />
@@ -49,11 +66,13 @@ export default function CreateProfile() {
         <label htmlFor=''>State</label>
         <input name='state' type='text' onChange={handleForm} />
         <br />
-        <button onClick={() => submitProfile} >
+        <Button size="xsmall" label="Submit Profile" color="black" onClick={() => submitProfile} >
         {console.log(submitProfile , "checking for profiles")}
-          Submit Profile
-        </button>
-      </form>
+        </Button>
+      </Form>
+      </Box>
     </div>
+    </Grommet>
+    </body>
   )
 }

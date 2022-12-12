@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import './assets/styles.css'
-import Home from './pages/Home'
+import { Assertive } from './pages/Home'
 // import SignIn from './pages/SignIn'
 import CreateProfile from './pages/CreateProfile'
 import MyProfile from './pages/MyProfile'
@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Assertive />} />
         {/* <Route path='/sign-in' element={<SignIn />} /> */}
         <Route path='/create-profile' element={<CreateProfile />} />
         <Route path='/my-profile' element={<MyProfile />} />
